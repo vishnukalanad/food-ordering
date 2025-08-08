@@ -36,6 +36,8 @@ export default function useHttp(url, config, initialData) {
         }
     }, [sendRequest])
 
+    console.log(data);
+
     return {
         error,
         loading,
