@@ -14,7 +14,10 @@ export default function CartItem({item}) {
         ctx.removeItem(item.id);
     }
     return <li className="flex justify-between text-sm font-medium py-2 border-b border-gray-200" key={item.id}>
-        <span>{item.name}</span>
+        <div className="flex items-center gap-2">
+            <img src={`http://localhost:3000/${item.image}`} alt="item-image" className="h-[2rem] w-[2rem] rounded-xl" />
+            <span>{item.name}</span>
+        </div>
         <div className="flex items-center gap-2">
             <button onClick={handleRemoveItem} className="w-[24px] h-[24px] cursor-pointer flex items-center justify-center rounded-full border border-gray-200 hover:bg-gray-200">
                 <MdRemove className="text-gray-700" />
