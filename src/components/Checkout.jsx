@@ -44,7 +44,7 @@ export default function Checkout() {
 
     const [formState, formAction, pending] = useActionState(handleSubmit, null)
 
-    const {error, data, sendRequest} = useHttp('http://localhost:3000/orders', requestOptions, [])
+    const {error, data, sendRequest} = useHttp(`${process.env.REACT_APP_API_URL}/orders`, requestOptions, [])
 
     if (data?.message && !error) {
         return <Modal open={userCtx.progress === 'checkout'} onClose={handleClose}>
