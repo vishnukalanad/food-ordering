@@ -44,8 +44,9 @@ export default function Checkout() {
 
     const [formState, formAction, pending] = useActionState(handleSubmit, null)
 
-    const {error, data, sendRequest} = useHttp(`${process.env.REACT_APP_API_URL}/orders`, requestOptions, [])
+    const {error, data, sendRequest} = useHttp(`${import.meta.env.VITE_API_URL}/orders`, requestOptions, [])
 
+    console.log(import.meta.env.VITE_API_URL)
     if (data?.message && !error) {
         return <Modal open={userCtx.progress === 'checkout'} onClose={handleClose}>
             <h2 className="text-green-800 font-medium text-lg">Order successful</h2>

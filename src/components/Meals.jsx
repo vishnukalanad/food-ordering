@@ -20,7 +20,7 @@ export default function Meals() {
     //     getMeals();
     // }, [])
 
-    const {error, loading, data: meals} = useHttp(`${process.env.REACT_APP_API_URL}/meals`, requestOptions, [])
+    const {error, loading, data: meals} = useHttp(`${import.meta.env.VITE_API_URL}/meals`, requestOptions, [])
 
     if(loading) return <p>Loading...</p>
 

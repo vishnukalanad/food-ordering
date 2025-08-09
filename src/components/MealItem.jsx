@@ -10,7 +10,7 @@ export default function MealItem({data}) {
     }
     return <div className="flex  flex-col lg:flex-row lg:items-center p-4 bg-white rounded-xl">
         <div className="flex-shrink-0">
-            <img src={`${process.env.REACT_APP_API_URL}/${data.image}`} alt="item-image" className="h-[5rem] w-[5rem] rounded-xl" />
+            <img src={`${import.meta.env.VITE_API_URL}/${data.image}`} alt="item-image" className="h-[5rem] w-[5rem] rounded-xl" />
         </div>
 
         <div className="flex justify-between lg:px-2">
